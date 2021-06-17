@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 2
+}
+.search
+{
+    font-family: sans-serif;
+    font-size: 21;  
+    margin: auto;
+    width: 30%;
+    text-align: center;
+}
+.search input { 
+    position: absolute;
+    right: 500px;
+    top: 300px;
+    border: 1px solid #e9e9e9;
+    border-radius: 25px;
+    width: 500px;
+    height: 40px;
+    padding-left: 40px;
+    text-align: left;
+    
+    background-image: url('search-icon.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 2% 50%;
+}
+.search input:focus {
+    outline: none;
+} 
+.search button {
+    height: 35px;
+    background-color: #f8f8fb;
+    border: 1px solid #f8f8f8;
+    padding: 8px 16px 8px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.search button:hover {
+    border-color: #e3e4e9;
+}
+.searchbtn {
+    position: absolute;
+    left: 625px;
+    top: 400px;
+}
+.lucky {
+    position: absolute;
+    left: 775px;
+    top: 400px;
+}
+.search img[type=text] {
+    width: 30px;
+    height: 30px;
+}
+.footer {
+    position: absolute;
+    background-color: #efefef;
+    padding: 10px 4px;
+    padding-left: 30px;
+    bottom: 0px;
+
+}
+.footer a {
+    text-decoration: none;
+    font-size: 15px;
+    color: rgba(0,0,0,.54);
+    margin: 15px;
+}
+.footer a:hover { 
+    text-decoration: underline;
+}
+.spacing {
+    padding-left: 780px;
+}
+.Location {
+    border-bottom: 2px solid #dddddd;
+    font-size: 15px;
+    color: rgba(0,0,0,.54);
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    height: 40px;
+    background-color: #efefefef;
+}
+.Location p {
+    margin-left: 45px;
+}
+.logo {
+    position: relative;
+    top: 50px;
+}
+</style>
+<body>
+<div class="search">
+    <img class="logo" height="250" src="lo.png" width="250" data-atf="1">
+    <input type="text" id="myInput" placeholder="Search Google or type a URL">
+    <button class="searchbtn" onclick="searchButton()">Google Search</button>
+    <button class ="lucky">I'm feeling lucky</button>
+</div>
+<div class="footer">
+    <a class="about" href="about.html">About</a>
+    <a class="advertising" href="advertising.html">Advertising</a>
+    <a class="business" href="business.html">Business</a>
+    <a class="spacing"></a>
+    <a class="searchworks" href="searchworks.html">How Search Works</a>
+    <a class="privacy" href="privacy.html">Privacy</a>
+    <a class="terms" href="terms.html">Terms</a>
+    <a class="settngs" href="settings.html">Settings</a>
+</div>  
+<div class="Location">
+    <p>Azerbaijan</p>
+</div>
+<script>
+    var input = document.getElementById("myInput");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) 
+        {
+            var replacedInput = document.getElementById('myInput').value;
+            replacedInput.replace(" ", "+");
+            location.href = "https://www.google.com/search?q=" + replacedInput;
+        }
+    });
+    function searchButton() {
+        var replacedInput = document.getElementById('myInput').value;
+        replacedInput.replace(" ", "+");
+        location.href = "https://www.google.com/search?q=" + replacedInput;
+    }
+    
+</script>
+</body>
